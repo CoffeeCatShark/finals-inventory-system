@@ -81,7 +81,9 @@ class Inventory{
 		return instance;
 	}
 	
-	
+	int getCount(){
+		return count;
+	}
 	bool isDuplicateId(string input){
 		for(int i=0;i<count;i++){
 			if(input == items[i]->getID());
@@ -117,7 +119,7 @@ class Inventory{
 		for(int i = 0;i<count;i++){
 					if(key == items[i]->getID()){
 						delete items[i];
-						count--;
+						count-=1;
 						cout<<"Item Successfully Deleted."<<endl;
 						return;
 			}

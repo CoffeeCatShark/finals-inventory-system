@@ -32,11 +32,18 @@ string input;
 	if(adminControl == false){
 	switch (_input){
 		case 0: 
+		cout<<"Exiting Program. . ."<<endl;
 		return false;
 		
 		break;
-		case 1: inventory.listItem();
-		
+		case 1: 
+		if(inventory.getCount() == 0){
+				cout<<"No Items on Inventory"<<endl;
+			}
+			else{
+				inventory.listItem();
+			}
+	
 		break;
 		case 2: 
 		cout<<"Input Name of ID: ";
@@ -59,7 +66,13 @@ string input;
 		return false;
 		
 		break;
-		case 1: inventory.listItem();
+		case 1: 
+			if(inventory.getCount() == 0){
+				cout<<"No Items on Inventory"<<endl;
+			}
+			else{
+				inventory.listItem();
+			}
 		
 		break;
 		case 2: 
