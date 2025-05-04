@@ -57,7 +57,7 @@ string input;
 		inventory.removeItem(input);
 		
 		break;
-		default: cout<<"BUFFER"<<endl;
+		default: cout<<"Error: Must only be the shown numbers"<<endl;
 	}
 }
 	if(adminControl == true){
@@ -100,7 +100,7 @@ string input;
 		
 		
 		break;
-		default: cout<<"BUFFER"<<endl;
+		default: cout<<"Error: Must only be the shown numbers"<<endl;
 	}
 	}
 return true;
