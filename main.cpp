@@ -27,6 +27,7 @@ string input;
 	cout<<"[6]\tPrint Current Inventory"<<endl;
 	}
 	cout<<"Input: ";
+	
 	int _input = exceptionHandle();
 	
 	if(adminControl == false){

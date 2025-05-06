@@ -5,6 +5,15 @@
 #include <string>
 using namespace std;
 
+bool isDigits(const string& str) {
+    for (char ch : str) {
+        if (!isdigit(ch)) {
+            return false;
+        }
+    }
+    return true;
+}
+
 bool isString(const string& name) {	
     for (char ch : name) {
         if (!isalpha(ch) && ch == ' ') {
@@ -30,10 +39,21 @@ int exceptionHandle(){
 	string input;
 	while(!isValid){
 
+	
 		try{
 		getline(cin,input);
+		if(!isDigits(input)){
+			throw (42);
+		}
         digit = stoi(input); 
         isValid = true;
+		}	
+		
+		
+		catch (const int& errorNum){
+			cin.clear();
+			cout<<"Error: Please Only Enter a Number."<<endl;
+			cout<<"Input: ";
 		}
 		catch (invalid_argument&) {
                         cout << "Invalid input. Please enter a number." << endl;
@@ -56,11 +76,12 @@ class Items{
 		string name;
 		string id;
 		int quantity = 0;
-	public:	Items(string name_, string id_, int quantity_): name(name_), id(id_), quantity(quantity_){}
+		float price;
+	public:	Items(string name_, string id_, int quantity_, float price_): name(name_), id(id_), quantity(quantity_), price(price_){}
 		string getName(){	return name;	}
 		string getID(){		return id;	}
 		int getQuantity(){	return quantity;}
-
+		float getPrice(){	return price;}
 		void setQuantity(int x){
 			quantity = x;
 		}
@@ -92,8 +113,8 @@ class Inventory{
 		return false;
 	}
 	
-	void addItem(string name, string id, int quantity){
-		Items* item = new Items(name,id,quantity);
+	void addItem(string name, string id, int quantity, float price){
+		Items* item = new Items(name,id,quantity,price);
 		items[count++] = item;
 		cout<<"Item Added Successfully."<<endl;
 	}
@@ -101,9 +122,9 @@ class Inventory{
 	void listItem(){
 		cout<<"INVENTORY LIST"<<endl;
 		cout<<"=================================="<<endl;
-		cout<<"Name\tID\tQuantity"<<endl;
+		cout<<"Name\tID\tQuantity\tPrice"<<endl;
 						for(int i=0;i<count;i++){
-						cout<<items[i]->getName()<<"\t"<<items[i]->getID()<<"\t"<<items[i]->getQuantity()<<endl;
+						cout<<items[i]->getName()<<"\t"<<items[i]->getID()<<"\t"<<items[i]->getQuantity()<<"\t\t"<<items[i]->getPrice()<<endl;
 		}
 	}
 
@@ -159,7 +180,7 @@ class Inventory{
 		return;
 	}
 	
-	
+
 	
 	void addQuantity(string input){
 		string key = input;
@@ -181,6 +202,7 @@ class Inventory{
 		
 			string text;
 			int number;
+			float price;
 			string text_[3][100];
 			
 		ifstream ReadFile("DoNotOpen.txt");
@@ -200,6 +222,8 @@ class Inventory{
 					text_[x][i] = text;	
 							try{
 								number = stoi(text_[2][i]);
+								price = stoi(text_[3][i]);
+								
 							}
 							catch(invalid_argument&){
 							}
@@ -209,7 +233,7 @@ class Inventory{
 				}
 
 			
-	Items* item = new Items(name,id,quantity);
+	Items* item = new Items(name,id,quantity,price);
 		items[i] = item;
 	
 			
@@ -299,6 +323,15 @@ int setQuantity(){
 	return quant;
 }
 
+float setPrice(){
+	string input;
+	float price;
+	cout<<"Price: ";
+	price = exceptionHandle();
+	return price;
+}
+
+
 void deleteConfirm(){
 	string input;
 	string input_;
@@ -321,6 +354,6 @@ void deleteConfirm(){
 
 void readyItem(){
 	cout<<"Add Item"<<endl;
-	inventory.addItem(setName(),setID(),setQuantity());
+	inventory.addItem(setName(),setID(),setQuantity(),setPrice());
 	
 }
