@@ -4,6 +4,39 @@
 #include <ctime>
 #include <string>
 using namespace std;
+
+float exceptionHandlePrice(){
+	bool isValid = false;
+	string input;
+	float digit;
+	while(!isValid){
+
+		try{
+		scanf("%d", &input);
+        digit = stof(input); 
+        isValid = true;
+		}	
+		
+		
+		catch (const int& errorNum){
+			cin.clear();
+			cout<<"Error: Please Only Enter a Valid Number."<<endl;
+			cout<<"Input: ";
+		}
+		catch (invalid_argument&) {
+                        cout << "Invalid input. Please enter a number." << endl;
+                        cin.clear();
+                        		cout<<"Input: ";
+     	}
+      catch (out_of_range&) {
+    	cerr << "Input too large." << endl;
+    	cin.clear();
+    			cout<<"Input: ";
+    }
+}
+	return digit;
+}
+
 bool isDigits(const string& str) {
     for (char ch : str) {
         if (!isdigit(ch)) {
@@ -43,7 +76,7 @@ int exceptionHandle(){
 		if(!isDigits(input)){
 			throw (42);
 		}
-        digit = stof(input); 
+        digit = stoi(input); 
         isValid = true;
 		}	
 		
@@ -259,6 +292,9 @@ class Inventory{
                 WriteFile<<items[i]->getName()<<endl;
                 WriteFile<<items[i]->getID()<<endl;
                 WriteFile<<items[i]->getQuantity()<<endl;
+                WriteFile<<items[i]->getPrice()<<endl;
+                WriteFile<<items[i]->getType()<<endl;
+                WriteFile<<items[i]->getCategory()<<endl;
             }
             
             WriteFile.close();
@@ -332,9 +368,10 @@ class Inventory{
             Record << "\tINVENTORY RECORDS "<<endl;
             Record <<asctime(myTime)<<endl;
             Record << "=================================="<<endl;
-            Record << "Item\tID\tQuantity"<<endl;
+            Record << "Item\tID\tQuantity\tPrice\tType\tCategory"<<endl;
             for(int i=0;i<count;i++){
-                Record<<items[i]->getName()<<"\t"<<items[i]->getID()<<"\t"<<items[i]->getQuantity()<<endl;
+                Record<<items[i]->getName()<<"\t"<<items[i]->getID()<<"\t"<<items[i]->getQuantity()<<"\t"<<items[i]->getPrice()<<"\t"<<items[i]->getType()<<"\t"
+				<<items[i]->getCategory();
             }
         }    
 };
@@ -392,7 +429,7 @@ void readyItem(){
     cout<<"Item Type: ";
     getline(cin, type);
     cout<<"Item Price: ";
-    price = exceptionHandle();
+    price = exceptionHandlePrice();
     cout<<"Item Category: ";
     getline(cin, category);
     
