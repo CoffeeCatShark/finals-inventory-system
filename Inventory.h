@@ -164,6 +164,7 @@ class Inventory{
             return count;
         }
         
+        
         bool isDuplicateId(string input){
             for(int i=0;i<count;i++){
                 if(input == items[i]->getID());
@@ -389,6 +390,31 @@ class Inventory{
 				<<items[i]->getCategory();
             }
         }    
+        
+        
+    string setID(){
+    bool valid = false;
+    string input;
+    cout<<"Item ID: ";
+    while(!valid)
+    {
+        getline(cin, input);
+            for(int i=0;i<count;i++){
+    		if(items[i]->getID() == input){
+    			cout<<"Error: Duplicate ID. Try Again: ";
+    			getline(cin,input);
+    		 	continue;
+			}
+		}
+        valid = isString(input);
+        if(valid == false)
+            cout<<"Input Error. Try Again: ";
+    }
+    
+    input = capital(input);
+    return input;
+}
+
 };
 
 Inventory& inventory = Inventory::getInstance();
@@ -408,20 +434,6 @@ string setName(){
     return input;
 }
 
-string setID(){
-    bool valid = false;
-    string input;
-    cout<<"Item ID: ";
-    while(!valid)
-    {
-        getline(cin, input);
-        valid = isString(input);
-        if(valid == false)
-            cout<<"Input Error. Try Again: ";
-    }
-    input = capital(input);
-    return input;
-}
 
 
 void searchControl(){
@@ -459,7 +471,7 @@ int setQuantity(){
 void readyItem(){
     cout<<"Add Item"<<endl;
     string name = setName();
-    string id = setID();
+    string id = inventory.setID();
     int quantity = setQuantity();
     
     string type, category;
