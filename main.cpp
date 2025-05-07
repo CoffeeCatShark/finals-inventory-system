@@ -106,7 +106,6 @@ return true;
 
 int main(){
 	
-	
 	inventory.initializeInventory();
 	
 	bool isRunning = true;
