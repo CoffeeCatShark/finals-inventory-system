@@ -423,6 +423,29 @@ string setID(){
     return input;
 }
 
+void searchControl(){
+	cout << "Enter ID to search: ";
+		string searchId;
+		getline(cin, searchId);
+		inventory.searchById(searchId);
+}
+
+void swapControl(){
+	cout << "Sort by:" << endl;
+		cout << "[1] Type" << endl;
+		cout << "[2] Price" << endl;
+		cout << "[3] Category" << endl;
+		cout << "[4] Stock Amount" << endl;
+		cout << "Input: ";
+		int sortOption;
+		sortOption = exceptionHandle();
+		if(sortOption >= 1 && sortOption <= 4) {
+			inventory.sortItems(sortOption);
+		} else {
+			cout << "Invalid sort option!" << endl;
+		}
+}
+
 int setQuantity(){
     string input;
     int quant;

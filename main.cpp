@@ -23,6 +23,8 @@ string input;
 	cout<<"[5]\tDelete Items from Inventory"<<endl;
 	cout<<"[6]\tPrint Current Inventory"<<endl;
 	}
+	cout<<"[7]\tSort Items"<<endl;
+	cout<<"[8]\tSearch by ID"<<endl;
 	cout<<"Input: ";
 	
 	int _input = exceptionHandle();
@@ -53,6 +55,14 @@ string input;
 		cout<<"Input Name of ID: ";
 		getline(cin,input);
 		inventory.removeItem(input);
+		
+		break;
+		case 7:
+		swapControl();
+		
+		break;
+		case 8: 
+		searchControl();
 		
 		break;
 		default: cout<<"Error: Must only be the shown numbers"<<endl;
@@ -97,6 +107,13 @@ string input;
 				cout<<"Inventory Receipt Printed."<<endl;
 		
 		
+		break;
+		case 7:
+		swapControl();
+		
+		break;
+		case 8: 
+		searchControl();
 		break;
 		default: cout<<"Error: Must only be the shown numbers"<<endl;
 	}
