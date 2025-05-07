@@ -423,6 +423,7 @@ string setID(){
     return input;
 }
 
+
 void searchControl(){
 	cout << "Enter ID to search: ";
 		string searchId;

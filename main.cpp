@@ -106,7 +106,6 @@ string input;
 		case 6: inventory.printReceipt();
 				cout<<"Inventory Receipt Printed."<<endl;
 		
-		
 		break;
 		case 7:
 		swapControl();
@@ -114,6 +113,7 @@ string input;
 		break;
 		case 8: 
 		searchControl();
+		
 		break;
 		default: cout<<"Error: Must only be the shown numbers"<<endl;
 	}
