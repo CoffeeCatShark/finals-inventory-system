@@ -5,6 +5,14 @@
 #include <string>
 using namespace std;
 
+bool isDigitsPrice(const string& str) {
+    for (char ch : str) {
+        if (isalpha(ch) && ch != '.') {
+            return false;
+        }
+    }
+    return true;
+}
 float exceptionHandlePrice(){
 	bool isValid = false;
 	string input;
@@ -12,8 +20,11 @@ float exceptionHandlePrice(){
 	while(!isValid){
 
 		try{
-		scanf("%d", &input);
-        digit = stof(input); 
+		getline(cin, input);
+		if(!isDigitsPrice(input)){
+			throw (42);
+		}
+        digit = stof(input);
         isValid = true;
 		}	
 		
