@@ -66,6 +66,7 @@ bool isString(const string& name) {
     return !name.empty();
 }
 
+
 string capital(string input){
     string _input;
     
@@ -74,6 +75,7 @@ string capital(string input){
 
     return input;
 }
+
 
 int exceptionHandle(){
 	bool isValid = false;
@@ -381,7 +383,7 @@ class Inventory{
             Record << "=================================="<<endl;
             Record << "Item\tID\tQuantity\tPrice\tType\tCategory"<<endl;
             for(int i=0;i<count;i++){
-                Record<<items[i]->getName()<<"\t"<<items[i]->getID()<<"\t"<<items[i]->getQuantity()<<"\t"<<items[i]->getPrice()<<"\t"<<items[i]->getType()<<"\t"
+                Record<<items[i]->getName()<<"\t"<<items[i]->getID()<<"\t"<<items[i]->getQuantity()<<"\t\t"<<items[i]->getPrice()<<"\t"<<items[i]->getType()<<"\t"
 				<<items[i]->getCategory();
             }
         }    
