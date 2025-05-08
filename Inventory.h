@@ -385,7 +385,6 @@ class Inventory{
         //NEW CODE END
         
         
-        
         void printReceipt(){
             time_t timestamp;
             time(&timestamp);
@@ -402,7 +401,6 @@ class Inventory{
 				<<items[i]->getCategory()<<endl;
             }
         }    
-        
         
     string setID(){
     bool valid = false;
