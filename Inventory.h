@@ -280,7 +280,7 @@ class Inventory{
             count = number;        
             
             for(int i=0;i<count;i++){
-                for(int x=0;x<3;x++){
+                for(int x=0;x<5;x++){
                     getline(ReadFile,text);
                     text_[x][i] = text;    
                     try{
@@ -289,8 +289,6 @@ class Inventory{
                     catch(invalid_argument&){
                     }
                     try{price = stof(text_[4][i]);
-					}
-					catch(bad_alloc&){
 					}
 					catch(invalid_argument&){
 					}
