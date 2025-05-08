@@ -195,7 +195,7 @@ class Inventory{
         void listItem(){
             cout<<"INVENTORY LIST"<<endl;
             cout<<"=================================="<<endl;
-            cout<<"Name\tID\tQuantity\tPrice\tType\tCategory"<<endl;
+            cout<<"Name\t\tID\t\tQuantity\t\tPrice\t\tType\t\tCategory"<<endl;
             for(int i=0;i<count;i++){
                 cout<<items[i]->getName()<<"\t\t"<<items[i]->getID()<<"\t\t"<<items[i]->getQuantity()<<"\t\t\t"<<items[i]->getPrice()<<"\t\t"
 				<<items[i]->getType()<<"\t\t"<<items[i]->getCategory()<<endl;
@@ -396,7 +396,7 @@ class Inventory{
             Record << "\tINVENTORY RECORDS "<<endl;
             Record <<asctime(myTime)<<endl;
             Record << "=================================="<<endl;
-            Record << "Item\tID\tQuantity\tPrice\tType\tCategory"<<endl;
+            Record << "Item\t\tID\t\tQuantity\t\tPrice\t\tType\t\tCategory"<<endl;
             for(int i=0;i<count;i++){
                 Record<<items[i]->getName()<<"\t\t"<<items[i]->getID()<<"\t\t"<<items[i]->getQuantity()<<"\t\t\t"<<items[i]->getPrice()<<"\t\t"<<items[i]->getType()<<"\t\t"
 				<<items[i]->getCategory()<<endl;
