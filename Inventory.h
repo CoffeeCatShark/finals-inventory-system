@@ -262,11 +262,12 @@ class Inventory{
             string name;
             string id;
             int quantity;
-            
+            string category;
+            string type;
+            float price;
             string text;
             int number;
-            string text_[3][100];
-            
+            string text_[3][10];
             ifstream ReadFile("DoNotOpen.txt");
             getline(ReadFile,text);
             
@@ -287,12 +288,20 @@ class Inventory{
                     }
                     catch(invalid_argument&){
                     }
+                    try{price = stof(text_[4][i]);
+					}
+					catch(bad_alloc&){
+					}
+					catch(invalid_argument&){
+					}
                     name = text_[0][i];
                     id = text_[1][i];
                     quantity = number;
+                    type = text_[3][i];
+                    category = text_[5][i];
                 }
 
-                Items* item = new Items(name,id,quantity);
+                Items* item = new Items(name,id,quantity,type,price,category);
                 items[i] = item;
             }
         }
@@ -306,8 +315,8 @@ class Inventory{
                 WriteFile<<items[i]->getName()<<endl;
                 WriteFile<<items[i]->getID()<<endl;
                 WriteFile<<items[i]->getQuantity()<<endl;
-                WriteFile<<items[i]->getPrice()<<endl;
                 WriteFile<<items[i]->getType()<<endl;
+                WriteFile<<items[i]->getPrice()<<endl;
                 WriteFile<<items[i]->getCategory()<<endl;
             }
             
