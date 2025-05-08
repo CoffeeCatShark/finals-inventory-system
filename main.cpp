@@ -121,6 +121,7 @@ string input;
 return true;
 }
 
+
 int main(){
 	
 	inventory.initializeInventory();
