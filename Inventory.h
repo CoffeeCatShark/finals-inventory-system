@@ -173,6 +173,7 @@ class Inventory{
             return false;
         }
         
+        
         // NEW CODE START - UPDATED ADDITEM
         void addItem(string name, string id, int quantity, string type = "N/A", double price = 0.0, string category = "N/A"){
             Items* item = new Items(name,id,quantity,type,price,category);
