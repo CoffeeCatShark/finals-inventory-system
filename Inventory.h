@@ -222,6 +222,8 @@ class Inventory{
         }
                 
         void removeItem(string input){
+        	int quant;
+        	string name;
             string key = input;
             if(count == 0){
                 cout<<"No Items on inventory"<<endl;
@@ -233,20 +235,21 @@ class Inventory{
                 if(key == items[i]->getID()){
                     string input;
                     cout<<"Enter Quantity of "<<items[i]->getName()<<" To Remove: ";
-                    int quant = exceptionHandle();
+                    quant = exceptionHandle();
                     bool valid =  false;
                 
-                    if(quant > items[i]->getQuantity()){
+                    while(quant > items[i]->getQuantity()){
                         cout<<"Error: Request Exceeds Current Quantity ["<<quant<<"/"<<items[i]->getQuantity()<<"]"<<endl;
                         cout<<"New Input: ";
                         quant = exceptionHandle();
-                        continue;
                     }
             
-                    items[i]->setQuantity(items[i]->getQuantity()-quant);
+                    
                 }
+                items[i]->setQuantity(items[i]->getQuantity()-quant);
+                name = items[i]->getName();
             }
-            cout<<"Error:ID Not Found."<<endl;
+            cout<<quant<<" "<<name<<" Removed."<<endl;
             return;
         }
         
