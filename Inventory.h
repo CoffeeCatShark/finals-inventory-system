@@ -448,7 +448,7 @@ void searchControl(){
 	cout << "Enter ID to search: ";
 		string searchId;
 		getline(cin, searchId);
-		inventory.searchById(searchId);
+		inventory.searchById(capital(searchId));
 }
 
 void swapControl(){
