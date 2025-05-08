@@ -146,6 +146,8 @@ class Items{
         void setQuantity(int x){
             quantity = x;
         }
+        
+        
 };
 
 class Inventory{
@@ -163,6 +165,7 @@ class Inventory{
         int getCount(){
             return count;
         }
+        
         
         
         bool isDuplicateId(string input){
