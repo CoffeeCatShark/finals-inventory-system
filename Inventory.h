@@ -267,7 +267,7 @@ class Inventory{
             float price;
             string text;
             int number;
-            string text_[3][10];
+            string text_[5][100];
             ifstream ReadFile("DoNotOpen.txt");
             getline(ReadFile,text);
             
@@ -278,6 +278,7 @@ class Inventory{
                 
             }
             count = number;        
+            
             
             for(int i=0;i<count;i++){
                 for(int x=0;x<5;x++){
