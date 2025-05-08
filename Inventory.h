@@ -147,8 +147,6 @@ class Items{
             quantity = x;
         }
         
-        
-        
 };
 
 class Inventory{
