@@ -197,8 +197,8 @@ class Inventory{
             cout<<"=================================="<<endl;
             cout<<"Name\tID\tQuantity\tPrice\tType\tCategory"<<endl;
             for(int i=0;i<count;i++){
-                cout<<items[i]->getName()<<"\t"<<items[i]->getID()<<"\t"<<items[i]->getQuantity()<<"\t\t"<<items[i]->getPrice()<<"\t"
-				<<items[i]->getType()<<"\t"<<items[i]->getCategory()<<endl;
+                cout<<items[i]->getName()<<"\t\t"<<items[i]->getID()<<"\t\t"<<items[i]->getQuantity()<<"\t\t\t"<<items[i]->getPrice()<<"\t\t"
+				<<items[i]->getType()<<"\t\t"<<items[i]->getCategory()<<endl;
             }
         }
 
@@ -398,8 +398,8 @@ class Inventory{
             Record << "=================================="<<endl;
             Record << "Item\tID\tQuantity\tPrice\tType\tCategory"<<endl;
             for(int i=0;i<count;i++){
-                Record<<items[i]->getName()<<"\t"<<items[i]->getID()<<"\t"<<items[i]->getQuantity()<<"\t\t"<<items[i]->getPrice()<<"\t"<<items[i]->getType()<<"\t"
-				<<items[i]->getCategory();
+                Record<<items[i]->getName()<<"\t\t"<<items[i]->getID()<<"\t\t"<<items[i]->getQuantity()<<"\t\t\t"<<items[i]->getPrice()<<"\t\t"<<items[i]->getType()<<"\t\t"
+				<<items[i]->getCategory()<<endl;
             }
         }    
         
