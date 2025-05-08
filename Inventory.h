@@ -280,7 +280,6 @@ class Inventory{
             count = number;        
             
             
-            
             for(int i=0;i<count;i++){
                 for(int x=0;x<6;x++){
                     getline(ReadFile,text);
