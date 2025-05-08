@@ -385,6 +385,7 @@ class Inventory{
         //NEW CODE END
         
         
+        
         void printReceipt(){
             time_t timestamp;
             time(&timestamp);
