@@ -62,7 +62,7 @@ bool isDigits(const string& str) {
 
 bool isString(const string& name) {	
     for (char ch : name) {
-        if (!isalpha(ch)) {
+        if (ch == ' ') {
             return false;
         }
     }
@@ -428,7 +428,7 @@ class Inventory{
 		}
         valid = isString(input);
         if(valid == false)
-            cout<<"Input Error. Try Again: ";
+            cout<<"Input Error. No Spaces Allowed. Try Again: ";
     }
     
     input = capital(input);
@@ -448,7 +448,7 @@ string setName(){
         getline(cin, input);
         valid = isString(input);
         if(valid == false)
-            cout<<"Input Error. Try Again: ";
+            cout<<"Input Error. No Spaces Allowed. Try Again: ";
     }
     input = capital(input);
     return input;
