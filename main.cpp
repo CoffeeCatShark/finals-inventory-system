@@ -10,7 +10,8 @@ bool menu(){
 		while(!validUser){
 		login();
 	}
-string input;	
+string input;
+	cout<<endl<<"============================"<<endl;	
 	cout<<"INVENTORY MANAGEMENT SYSTEM"<<endl;
 	cout<<"=================================="<<endl;
 	cout<<"[0]\tExit Program"<<endl;
