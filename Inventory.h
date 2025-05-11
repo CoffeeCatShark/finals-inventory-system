@@ -270,6 +270,7 @@ class Inventory{
             cout<<num<<" items added."<<endl;
         }
             
+            
         void initializeInventory(){
             string name;
             string id;
