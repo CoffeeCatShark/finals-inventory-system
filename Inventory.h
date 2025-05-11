@@ -256,15 +256,18 @@ class Inventory{
         }
         
         void addQuantity(string input){
+        	int num;
             string key = input;
             string input_;
             for(int i=0;i<count;i++){
                 if(key == items[i]->getID()){
                     cout<<"Enter Quantity of "<<items[i]->getName()<<" to Add"<<endl;
                     int quant = exceptionHandle();
+                    num = quant;
                     items[i]->setQuantity(items[i]->getQuantity()+quant);
                 }
             }
+            cout<<num<<" items added."<<endl;
         }
             
         void initializeInventory(){
