@@ -61,7 +61,7 @@ bool isDigits(const string& str) {
 
 bool isString(const string& name) {	
     for (char ch : name) {
-        if (!isalpha(ch) && ch == ' ') {
+        if (!isalpha(ch)) {
             return false;
         }
     }
