@@ -506,12 +506,7 @@ void readyItem(){
     
     inventory.addItem(name, id, quantity, type, price, category);
 }
-// NEW CODE END 
-// Original readyItem
-//void readyItem(){
-//    cout<<"Add Item"<<endl;
-//    inventory.addItem(setName(),setID(),setQuantity());
-//}
+
 
 void deleteConfirm(){
     string input;
