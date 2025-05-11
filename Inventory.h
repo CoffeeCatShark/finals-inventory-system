@@ -380,6 +380,7 @@ class Inventory{
                 }
             }
             
+            
             cout << "SORTED INVENTORY" << endl;
             cout << "==================================" << endl;
             cout << "Name\t\tID\t\tQuantity\t\tType\t\tPrice\t\tCategory" << endl;
