@@ -380,8 +380,6 @@ class Inventory{
                 }
             }
            
-		   
-		   
 		           
             cout << "SORTED INVENTORY" << endl;
             cout << "==================================" << endl;
