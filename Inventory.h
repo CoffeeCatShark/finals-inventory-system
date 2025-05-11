@@ -251,7 +251,7 @@ class Inventory{
                 items[i]->setQuantity(items[i]->getQuantity()-quant);
                 name = items[i]->getName();
             }
-            cout<<quant<<" "<<name<<" Removed."<<endl;
+            cout<<quant<<" Removed."<<endl;
             return;
         }
         
