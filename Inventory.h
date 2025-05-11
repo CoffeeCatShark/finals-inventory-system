@@ -508,6 +508,8 @@ void readyItem(){
 }
 
 
+
+
 void deleteConfirm(){
     string input;
     string input_;
