@@ -382,13 +382,13 @@ class Inventory{
             
             cout << "SORTED INVENTORY" << endl;
             cout << "==================================" << endl;
-            cout << "Name\tID\tQuantity\tType\tPrice\tCategory" << endl;
+            cout << "Name\t\tID\t\tQuantity\t\tType\t\tPrice\t\tCategory" << endl;
             for(int i = 0; i < count; i++) {
-                cout << items[i]->getName() << "\t" 
-                     << items[i]->getID() << "\t" 
-                     << items[i]->getQuantity() << "\t"
-                     << items[i]->getType() << "\t"
-                     << items[i]->getPrice() << "\t"
+                cout << items[i]->getName() << "\t\t" 
+                     << items[i]->getID() << "\t\t" 
+                     << items[i]->getQuantity() << "\t\t"
+                     << items[i]->getType() << "\t\t"
+                     << items[i]->getPrice() << "\t\t"
                      << items[i]->getCategory() << endl;
             }
         }
