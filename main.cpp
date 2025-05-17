@@ -5,7 +5,6 @@
 #include "Inventory.h"
 using namespace std;
 
-
 bool menu(){
 		while(!validUser){
 		login();
