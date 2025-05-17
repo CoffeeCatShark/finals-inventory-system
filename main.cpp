@@ -6,7 +6,6 @@
 using namespace std;
 
 
-
 bool menu(){
 		while(!validUser){
 		login();
